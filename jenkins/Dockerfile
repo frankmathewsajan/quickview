@@ -2,7 +2,7 @@ FROM jenkins/jenkins:lts
 
 USER root
 
-# Install Docker CLI
+# Install Docker CLI and buildx plugin
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ca-certificates curl gnupg && \
     install -m 0755 -d /etc/apt/keyrings && \
@@ -10,7 +10,7 @@ RUN apt-get update && \
     chmod a+r /etc/apt/keyrings/docker.gpg && \
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" > /etc/apt/sources.list.d/docker.list && \
     apt-get update && \
-    apt-get install -y --no-install-recommends docker-ce-cli && \
+    apt-get install -y --no-install-recommends docker-ce-cli docker-buildx-plugin && \
     rm -rf /var/lib/apt/lists/*
 
 # Install kubectl
@@ -21,7 +21,8 @@ RUN curl -fsSL -LO "https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl" &
 # Add jenkins user to docker group
 RUN groupadd -f docker && usermod -aG docker jenkins
 
-USER jenkins
+# Run as root so Jenkins has access to /var/run/docker.sock
+USER root
 
 EXPOSE 8080
 EXPOSE 50000
