@@ -6,6 +6,7 @@ A minimal full-stack application and DevOps sandbox with FastAPI, SQLite, vanill
 
 ```text
 learningsomestuff/
+├── .github/               # GitHub Actions CI workflow
 ├── backend/               # FastAPI backend (SQLite & uv)
 │   ├── main.py            # CRUD API (~60 lines)
 │   ├── pyproject.toml     # Python dependencies
