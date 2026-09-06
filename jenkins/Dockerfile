@@ -21,6 +21,9 @@ RUN curl -fsSL -LO "https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl" &
 # Add jenkins user to docker group
 RUN groupadd -f docker && usermod -aG docker jenkins
 
+# Configure Git safe.directory to avoid ownership errors
+RUN git config --system --add safe.directory '*'
+
 # Run as root so Jenkins has access to /var/run/docker.sock
 USER root
 
