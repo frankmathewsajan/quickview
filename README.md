@@ -29,6 +29,8 @@ learningsomestuff/
 │   └── README.md          # Kubernetes guide
 │
 ├── docker-compose.yml     # Multi-container orchestration
+├── Jenkinsfile            # Pipeline to build images & deploy to Kubernetes
+├── K8S.md                 # Complete Kubernetes guide
 └── README.md              # Project documentation
 ```
 

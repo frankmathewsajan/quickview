@@ -38,3 +38,22 @@ docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/je
    ```
    *(If you ran with root compose, container name may be `learningsomestuff-jenkins-1` or check with `docker ps`)*
 4. Complete the setup wizard by installing the recommended plugins and creating your admin user.
+
+---
+
+## Running the Deployment Pipeline
+
+The project includes a `Jenkinsfile` in the repository root.
+
+To run it:
+1. In Jenkins dashboard, click **New Item**.
+2. Enter a name (e.g. `todo-deploy`) and select **Pipeline**, then click **OK**.
+3. Scroll to the **Pipeline** section at the bottom.
+4. Set **Definition** to **Pipeline script from SCM**.
+5. Select **SCM** as **Git** and enter your repository URL:
+   ```text
+   https://github.com/frankmathewsajan/quickview.git
+   ```
+6. Set **Branch Specifier** to `*/main`.
+7. Ensure **Script Path** is `Jenkinsfile`.
+8. Click **Save**, then click **Build Now**.
