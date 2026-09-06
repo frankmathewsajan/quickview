@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.db
+backend/todos.db
+backend/data/
+.DS_Store
+kubectl.exe
+
