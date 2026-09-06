@@ -2,6 +2,8 @@
 
 This directory contains minimal Kubernetes manifests to run the Todo application on any Kubernetes cluster (such as Docker Desktop Kubernetes, Minikube, or kind).
 
+For the full step-by-step walkthrough on creating a cluster and deploying, see [K8S.md](../K8S.md).
+
 ## Files
 
 - `backend.yaml`: Deployment and ClusterIP Service for the FastAPI backend.
