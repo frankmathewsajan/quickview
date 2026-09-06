@@ -98,8 +98,8 @@ docker compose up -d
 ### 1. Build Docker Images
 
 ```bash
-docker build -t todo-backend:latest ./backend
-docker build -t todo-frontend:latest ./frontend
+docker build -t todo-backend:1.0.0 ./backend
+docker build -t todo-frontend:1.0.0 ./frontend
 ```
 
 ### 2. Deploy Manifests

@@ -64,14 +64,14 @@ docker-desktop   Ready    control-plane   1m    v1.34.1
 Kubernetes runs your containers using Docker images. Build the backend and frontend images from the project root:
 
 ```powershell
-docker build -t todo-backend:latest ./backend
-docker build -t todo-frontend:latest ./frontend
+docker build -t todo-backend:1.0.0 ./backend
+docker build -t todo-frontend:1.0.0 ./frontend
 ```
 
 ### Note for Minikube or Kind users:
 - **Docker Desktop**: Built images are immediately available to the local cluster.
-- **Minikube**: Run `minikube image load todo-backend:latest` and `minikube image load todo-frontend:latest`.
-- **Kind**: Run `kind load docker-image todo-backend:latest --name todo-cluster` and `kind load docker-image todo-frontend:latest --name todo-cluster`.
+- **Minikube**: Run `minikube image load todo-backend:1.0.0` and `minikube image load todo-frontend:1.0.0`.
+- **Kind**: Run `kind load docker-image todo-backend:1.0.0 --name todo-cluster` and `kind load docker-image todo-frontend:1.0.0 --name todo-cluster`.
 
 ---
 

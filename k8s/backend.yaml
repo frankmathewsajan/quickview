@@ -14,12 +14,21 @@ spec:
       labels:
         app: todo-backend
     spec:
+      automountServiceAccountToken: false
       containers:
         - name: backend
-          image: todo-backend:latest
+          image: todo-backend:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+              ephemeral-storage: "100Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service
