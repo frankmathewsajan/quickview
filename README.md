@@ -145,9 +145,9 @@ kubectl delete -f k8s/
 
 ## Tech Stack
 
-- Backend: Python 3.12+, FastAPI, Uvicorn, SQLite
+- Backend: Python 3.12+, FastAPI, Uvicorn, SQLite3
 - Package Manager: uv
 - Frontend: HTML5, CSS3, JavaScript, Nginx
 - Containers: Docker, Docker Compose
 - CI/CD: Jenkins LTS
-- Orchestration: Kubernetes
+- Orchestration: k8s
